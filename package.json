@@ -4,11 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "client:setup": "cd client && npm install",
+    "client:build": "cd client && npm run build",
+    "server:setup": "npm install",
+    "heroku-postbuild": "npm run server:setup && npm run client:setup && npm run client:build",
+    "server:start": "node backend/server.js",
+    "server:dev": "nodemon backend/server.js",
+    "start": "npm run server:start \"npm run start --prefix client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.4.0",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.0",
     "nodemon": "^2.0.19"
   }
 }
