@@ -10,7 +10,7 @@
     "heroku-postbuild": "npm run server:setup && npm run client:setup && npm run client:build",
     "server:start": "node backend/server.js",
     "server:dev": "nodemon backend/server.js",
-    "start": "npm run server:start \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server:start\" \"npm run start --prefix client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
