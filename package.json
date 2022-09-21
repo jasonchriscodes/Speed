@@ -12,7 +12,8 @@
     "server:dev": "nodemon backend/server.js",
     "start": "concurrently --kill-others-on-fail \"npm run server:start\" \"npm run start --prefix client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./client/src/**/*.js"
+    "lint": "eslint client/**/*.js",
+    "lint-fix": "eslint client/**/*.js --fix"
   },
   "author": "",
   "license": "ISC",
