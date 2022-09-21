@@ -11,7 +11,9 @@
     "server:start": "node backend/server.js",
     "server:dev": "nodemon backend/server.js",
     "start": "concurrently --kill-others-on-fail \"npm run server:start\" \"npm run start --prefix client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint client/**/*.js",
+    "lint-fix": "eslint client/**/*.js --fix"
   },
   "author": "",
   "license": "ISC",
@@ -23,5 +25,13 @@
     "mongoose": "^6.6.0",
     "nodemon": "^2.0.19",
     "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
