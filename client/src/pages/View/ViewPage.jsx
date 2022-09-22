@@ -75,6 +75,7 @@ const ViewPage = () => {
       field: "doi",
       align: "left",
       sorting: false,
+      filtering: false,
       emptyValue: () => <em>null</em>,
     },
     { title: "claim", field: "claim", align: "left", sorting: false },
@@ -88,7 +89,11 @@ const ViewPage = () => {
       <MaterialTable
         columns={columns}
         data={tableData}
-        options={{ sorting: true, searchFieldVariant: "outlined" }}
+        options={{
+          sorting: true,
+          searchFieldVariant: "outlined",
+          filtering: true,
+        }}
         title="Articles Information"
       />
     </div>
