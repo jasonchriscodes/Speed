@@ -66,7 +66,7 @@ const ViewPage = () => {
     },
   ]);
   const columns = [
-    { title: "title", field: "title", align: "left", defaultSort:"asc"},
+    { title: "title", field: "title", align: "left", defaultSort: "asc" },
     { title: "authors", field: "authors", align: "left" },
     { title: "source", field: "source", align: "left" },
     { title: "pubyear", field: "pubyear", align: "left" },
@@ -88,7 +88,7 @@ const ViewPage = () => {
       <MaterialTable
         columns={columns}
         data={tableData}
-        options={{ sorting: true }}
+        options={{ sorting: true, searchFieldVariant: "outlined" }}
         title="Articles Information"
       />
     </div>
