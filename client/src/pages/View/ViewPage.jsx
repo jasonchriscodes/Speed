@@ -74,11 +74,12 @@ const ViewPage = () => {
       title: "doi",
       field: "doi",
       align: "left",
+      sorting: false,
       emptyValue: () => <em>null</em>,
     },
-    { title: "claim", field: "claim", align: "left" },
-    { title: "evidence", field: "evidence", align: "left" },
-    { title: "practice", field: "practice", align: "left" },
+    { title: "claim", field: "claim", align: "left", sorting: false },
+    { title: "evidence", field: "evidence", align: "left", sorting: false },
+    { title: "practice", field: "practice", align: "left", sorting: false },
   ];
   return (
     <div className="App">
@@ -87,6 +88,7 @@ const ViewPage = () => {
       <MaterialTable
         columns={columns}
         data={tableData}
+        options={{ sorting: true }}
         title="Articles Information"
       />
     </div>
