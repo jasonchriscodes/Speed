@@ -59,27 +59,36 @@ const ViewPage = () => {
       authors: "Janzen, D. S.",
       source: "Software, IEEE, 25(2) 77-84",
       pubyear: "2008",
-      doi: "",
+      doi: null,
       claim: "code quality improvement",
       evidence: "strong support",
       practice: "TDD",
     },
   ]);
   const columns = [
-    { title: "title", field: "title", align:"left" },
-    { title: "authors", field: "authors", align:"left" },
-    { title: "source", field: "source", align:"left" },
-    { title: "pubyear", field: "pubyear", align:"left" },
-    { title: "doi", field: "doi", align:"left" },
-    { title: "claim", field: "claim", align:"left" },
-    { title: "evidence", field: "evidence", align:"left" },
-    { title: "practice", field: "practice", align:"left" },
+    { title: "title", field: "title", align: "left" },
+    { title: "authors", field: "authors", align: "left" },
+    { title: "source", field: "source", align: "left" },
+    { title: "pubyear", field: "pubyear", align: "left" },
+    {
+      title: "doi",
+      field: "doi",
+      align: "left",
+      emptyValue: () => <em>null</em>,
+    },
+    { title: "claim", field: "claim", align: "left" },
+    { title: "evidence", field: "evidence", align: "left" },
+    { title: "practice", field: "practice", align: "left" },
   ];
   return (
     <div className="App">
       <h1 align="center">SPEED Table Data</h1>
 
-      <MaterialTable columns={columns} data={tableData} title="Articles Information" />
+      <MaterialTable
+        columns={columns}
+        data={tableData}
+        title="Articles Information"
+      />
     </div>
   );
 };
