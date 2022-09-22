@@ -12,8 +12,8 @@ const ViewPage = () => {
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "code quality improvement",
-      evidence: "strong support",
+      claim: "codeQuality",
+      evidence: "stronglyAgainst",
       practice: "TDD",
     },
     {
@@ -24,8 +24,8 @@ const ViewPage = () => {
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "product quality improvement",
-      evidence: "weak support",
+      claim: "productQuality",
+      evidence: "mostlyAgainst",
       practice: "BDD",
     },
     {
@@ -36,8 +36,8 @@ const ViewPage = () => {
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "product quality improvement",
-      evidence: "weak support",
+      claim: "productQuality",
+      evidence: "mixed",
       practice: "BDD",
     },
     {
@@ -48,8 +48,8 @@ const ViewPage = () => {
       source: " Empirical Software Engineering, 13(3), 289–302",
       pubyear: "2008",
       doi: "https://doi.org/10.1007/s10664-008-9062-z",
-      claim: "product quality improvement",
-      evidence: "weak support",
+      claim: "productQuality",
+      evidence: "stronglyAgree",
       practice: "ATDD",
     },
     {
@@ -60,8 +60,8 @@ const ViewPage = () => {
       source: "Software, IEEE, 25(2) 77-84",
       pubyear: "2008",
       doi: null,
-      claim: "code quality improvement",
-      evidence: "strong support",
+      claim: "teamConfidence",
+      evidence: "stronglyAgainst",
       practice: "TDD",
     },
   ]);
@@ -78,9 +78,37 @@ const ViewPage = () => {
       filtering: false,
       emptyValue: () => <em>null</em>,
     },
-    { title: "claim", field: "claim", align: "left", sorting: false },
-    { title: "evidence", field: "evidence", align: "left", sorting: false },
-    { title: "practice", field: "practice", align: "left", sorting: false },
+    {
+      title: "claim",
+      field: "claim",
+      align: "left",
+      sorting: false,
+      lookup: {
+        teamConfidence: "Improves team confidence",
+        productQuality: "Improves product quality",
+        codeQuality: "Improves code quality",
+      },
+    },
+    {
+      title: "evidence",
+      field: "evidence",
+      align: "left",
+      sorting: false,
+      lookup: {
+        stronglyAgainst: "Strongly Against",
+        mostlyAgainst: "Mostly Against",
+        stronglyAgree: "Strongly Agree",
+        mostlyAgree: "Mostly Agree",
+        mixed: "Mixed",
+      },
+    },
+    {
+      title: "practice",
+      field: "practice",
+      align: "left",
+      sorting: false,
+      lookup: { TDD: "TDD", BDD: "BDD", ATDD: "ATDD" },
+    },
   ];
   return (
     <div className="App">
