@@ -79,7 +79,7 @@ const ViewPage = () => {
     <div className="App">
       <h1 align="center">SPEED Table Data</h1>
 
-      <MaterialTable columns={columns} data={tableData} />
+      <MaterialTable columns={columns} data={tableData} title="Articles Information" />
     </div>
   );
 };
