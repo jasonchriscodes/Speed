@@ -66,10 +66,31 @@ const ViewPage = () => {
     },
   ]);
   const columns = [
-    { title: "title", field: "title", align: "left", defaultSort: "asc", filterPlaceholder: "Filter by title" },
-    { title: "authors", field: "authors", align: "left", filterPlaceholder: "Filter by author" },
-    { title: "source", field: "source", align: "left", filterPlaceholder: "Filter by source" },
-    { title: "pubyear", field: "pubyear", align: "left", filterPlaceholder: "Filter by year" },
+    {
+      title: "title",
+      field: "title",
+      align: "left",
+      defaultSort: "asc",
+      filterPlaceholder: "Filter by title",
+    },
+    {
+      title: "authors",
+      field: "authors",
+      align: "left",
+      filterPlaceholder: "Filter by author",
+    },
+    {
+      title: "source",
+      field: "source",
+      align: "left",
+      filterPlaceholder: "Filter by source",
+    },
+    {
+      title: "pubyear",
+      field: "pubyear",
+      align: "left",
+      filterPlaceholder: "Filter by year",
+    },
     {
       title: "doi",
       field: "doi",
@@ -88,7 +109,7 @@ const ViewPage = () => {
         productQuality: "Improves product quality",
         codeQuality: "Improves code quality",
       },
-      filterPlaceholder: "Select claim types"
+      filterPlaceholder: "Select claim types",
     },
     {
       title: "evidence",
@@ -102,7 +123,7 @@ const ViewPage = () => {
         mostlyAgree: "Mostly Agree",
         mixed: "Mixed",
       },
-      filterPlaceholder: "Select evidence types"
+      filterPlaceholder: "Select evidence types",
     },
     {
       title: "practice",
@@ -110,7 +131,7 @@ const ViewPage = () => {
       align: "left",
       sorting: false,
       lookup: { TDD: "TDD", BDD: "BDD", ATDD: "ATDD" },
-      filterPlaceholder: "Select practice types"
+      filterPlaceholder: "Select practice types",
     },
   ];
   return (
@@ -124,6 +145,10 @@ const ViewPage = () => {
           sorting: true,
           searchFieldVariant: "outlined",
           filtering: true,
+          paging: true,
+          pageSizeOptions: [3, 5, 10, 20, 25, 50, 100],
+          pageSize: 3,
+          paginationType: "stepped",
         }}
         title="Articles Information"
       />
