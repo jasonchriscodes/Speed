@@ -149,6 +149,9 @@ const ViewPage = () => {
           pageSizeOptions: [3, 5, 10, 20, 25, 50, 100],
           pageSize: 3,
           paginationType: "stepped",
+          exportButton: true,
+          exportAllData: true,
+          exportFileName: "SPEED Table Data"
         }}
         title="Articles Information"
       />
