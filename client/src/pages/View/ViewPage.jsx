@@ -66,10 +66,10 @@ const ViewPage = () => {
     },
   ]);
   const columns = [
-    { title: "title", field: "title", align: "left", defaultSort: "asc" },
-    { title: "authors", field: "authors", align: "left" },
-    { title: "source", field: "source", align: "left" },
-    { title: "pubyear", field: "pubyear", align: "left" },
+    { title: "title", field: "title", align: "left", defaultSort: "asc", filterPlaceholder: "Filter by title" },
+    { title: "authors", field: "authors", align: "left", filterPlaceholder: "Filter by author" },
+    { title: "source", field: "source", align: "left", filterPlaceholder: "Filter by source" },
+    { title: "pubyear", field: "pubyear", align: "left", filterPlaceholder: "Filter by year" },
     {
       title: "doi",
       field: "doi",
@@ -88,6 +88,7 @@ const ViewPage = () => {
         productQuality: "Improves product quality",
         codeQuality: "Improves code quality",
       },
+      filterPlaceholder: "Select claim types"
     },
     {
       title: "evidence",
@@ -101,6 +102,7 @@ const ViewPage = () => {
         mostlyAgree: "Mostly Agree",
         mixed: "Mixed",
       },
+      filterPlaceholder: "Select evidence types"
     },
     {
       title: "practice",
@@ -108,6 +110,7 @@ const ViewPage = () => {
       align: "left",
       sorting: false,
       lookup: { TDD: "TDD", BDD: "BDD", ATDD: "ATDD" },
+      filterPlaceholder: "Select practice types"
     },
   ];
   return (
