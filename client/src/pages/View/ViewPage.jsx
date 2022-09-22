@@ -66,14 +66,14 @@ const ViewPage = () => {
     },
   ]);
   const columns = [
-    { title: "title", field: "title" },
-    { title: "authors", field: "authors" },
-    { title: "source", field: "source" },
-    { title: "pubyear", field: "pubyear" },
-    { title: "doi", field: "doi" },
-    { title: "claim", field: "claim" },
-    { title: "evidence", field: "evidence" },
-    { title: "practice", field: "practice" },
+    { title: "title", field: "title", align:"left" },
+    { title: "authors", field: "authors", align:"left" },
+    { title: "source", field: "source", align:"left" },
+    { title: "pubyear", field: "pubyear", align:"left" },
+    { title: "doi", field: "doi", align:"left" },
+    { title: "claim", field: "claim", align:"left" },
+    { title: "evidence", field: "evidence", align:"left" },
+    { title: "practice", field: "practice", align:"left" },
   ];
   return (
     <div className="App">
