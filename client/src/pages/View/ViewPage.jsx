@@ -1,6 +1,7 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { useState } from "react";
+import PageviewIcon from '@material-ui/icons/Pageview';
 
 const ViewPage = () => {
   const [tableData, setTableData] = useState([
@@ -151,9 +152,17 @@ const ViewPage = () => {
           paginationType: "stepped",
           exportButton: true,
           exportAllData: true,
-          exportFileName: "SPEED Table Data"
+          exportFileName: "SPEED Table Data",
         }}
         title="Articles Information"
+        actions={[
+          {
+            icon: () => <PageviewIcon>View</PageviewIcon>,
+            tooltip: "View",
+            onClick: (e,data) => console.log(data),
+            position:"row",
+          },
+        ]}
       />
     </div>
   );
