@@ -68,32 +68,32 @@ const ViewPage = () => {
   ]);
   const columns = [
     {
-      title: "title",
+      title: "Title",
       field: "title",
       align: "left",
       defaultSort: "asc",
       filterPlaceholder: "Filter by title",
     },
     {
-      title: "authors",
+      title: "Authors",
       field: "authors",
       align: "left",
       filterPlaceholder: "Filter by author",
     },
     {
-      title: "source",
+      title: "Source",
       field: "source",
       align: "left",
       filterPlaceholder: "Filter by source",
     },
     {
-      title: "pubyear",
+      title: "Pubyear",
       field: "pubyear",
       align: "left",
       filterPlaceholder: "Filter by year",
     },
     {
-      title: "doi",
+      title: "Doi",
       field: "doi",
       align: "left",
       sorting: false,
@@ -101,7 +101,7 @@ const ViewPage = () => {
       emptyValue: () => <em>null</em>,
     },
     {
-      title: "claim",
+      title: "Claim",
       field: "claim",
       align: "left",
       sorting: false,
@@ -113,7 +113,7 @@ const ViewPage = () => {
       filterPlaceholder: "Select claim types",
     },
     {
-      title: "evidence",
+      title: "Evidence",
       field: "evidence",
       align: "left",
       sorting: false,
@@ -127,7 +127,7 @@ const ViewPage = () => {
       filterPlaceholder: "Select evidence types",
     },
     {
-      title: "practice",
+      title: "Practice",
       field: "practice",
       align: "left",
       sorting: false,
