@@ -153,6 +153,7 @@ const ViewPage = () => {
           exportButton: true,
           exportAllData: true,
           exportFileName: "SPEED Table Data",
+          grouping: true
         }}
         title="Articles Information"
         actions={[
