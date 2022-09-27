@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const articles = [
   {
     id: '1',
@@ -60,3 +61,4 @@ const articles = [
     practice: 'ATDD',
   },
 ];
+/* eslint-enable no-unused-vars */
