@@ -26,7 +26,7 @@ app.use("/api/articles", articles);
 // Connect to Mongo Atlas
 connectDB();
 
-const __dirname = path.resolve();
+__dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
   // serve front-end client from build folder
