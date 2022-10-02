@@ -4,7 +4,7 @@ import { useState } from "react";
 import PageviewIcon from '@material-ui/icons/Pageview';
 
 const ViewPage = () => {
-  const [tableData, setTableData] = useState([
+  const [tableData] = useState([
     {
       id: "1",
       title:
@@ -137,7 +137,7 @@ const ViewPage = () => {
   ];
   return (
     <div className="App">
-      <h1 align="center">SPEED Table Data</h1>
+      <h1>SPEED Table Data</h1>
 
       <MaterialTable
         columns={columns}
