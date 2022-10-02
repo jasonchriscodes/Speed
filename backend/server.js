@@ -1,11 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const connectDB = require('../config/db');
+const express = require("express");
+const cors = require("cors");
+const connectDB = require("./config/db");
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 8888;
 
 // routes
-const articles = require('./routes/api/Repository');
+const articles = require("./routes/api/Repository");
 
 // cors config - allow same origin
 const corsOptions = {
@@ -20,20 +21,21 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // use routes here
-app.use('/api/articles', articles);
+app.use("/api/articles", articles);
 
 // Connect to Mongo Atlas
 connectDB();
 
-if (process.env.NODE_ENV === 'production') {
+__dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
   // serve front-end client from build folder
-  app.use(express.static(__dirname+'/../client/build'));
-  app.get('*', (req, res) =>{
-    res.sendFile(__dirname+'/../client/build/index.html')
+  app.use(express.static(path.join(__dirname + '/../client/build')));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../client/build/index.html'));
   });
-  
 } else {
-  app.get('/', (req, res) => res.send(`API running on port ${port}`));
+  app.get("/", (req, res) => res.send(`API running on port ${port}`));
 }
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './App.module.css';
+// import css from './App.module.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ViewPage from "./pages/View/ViewPage"
 
