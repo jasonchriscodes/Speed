@@ -1,22 +1,24 @@
-/* eslint-disable indent */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-empty */
-/* eslint-disable max-len */
-/* eslint-disable object-curly-newline */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable import/extensions */
-/* eslint-disable no-unused-vars */
+/**
+ * File: RoutesController.js
+ * This file contains the controlling functions for each routes.
+ *
+ * Current Functions:
+ *    # fetchAllArticles()
+ *    # createNewArticle()
+ */
+
 const mongoose = require('mongoose');
 const Article = require('../models/Article.js');
 
 // GET all articles
-// api/articles/all-articles
+// PATH: api/articles/all-articles
 const fetchAllArticles = async (request, response) => {
   const allArticles = await Article.find({});
   response.status(200).json(allArticles);
 };
 
 // POST new article
+// PATH: api/articles/post-new-article
 const createNewArticle = async (request, response) => {
   const {
     id,
@@ -49,6 +51,7 @@ const createNewArticle = async (request, response) => {
   }
 };
 
+// export functions
 module.exports = {
   fetchAllArticles,
   createNewArticle,
