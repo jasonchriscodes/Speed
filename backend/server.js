@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('../config/db');
-
+const connectDB = require('./config/db');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 8888;
 
@@ -30,6 +30,8 @@ app.use('/api/articles', AppRoutes);
 
 // Connect to Mongo Atlas
 connectDB();
+
+__dirname = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {
   // serve front-end client from build folder

@@ -1,10 +1,15 @@
 import React from 'react';
+// import css from './App.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ViewPage from './pages/View/ViewPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<ViewPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
