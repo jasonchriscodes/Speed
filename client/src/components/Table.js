@@ -6,6 +6,8 @@ import MaterialTable from "material-table";
 import { useState, useEffect } from "react";
 import Axios from 'axios';
 import RingLoader from 'react-spinners/RingLoader';
+// import PageviewIcon from '@material-ui/icons/Pageview';
+
 
 // URL to the Backend API
 const URL_GET = 'http://localhost:8888/api/articles/all-articles';
@@ -20,7 +22,6 @@ const Table = () => {
   const fetchArticles = () => {
     Axios.get(URL_GET)
     .then( (response) => {
-
       // retrieve the data relevant 
       const articlesData = response.data.map((data) => {
         return {
@@ -35,22 +36,23 @@ const Table = () => {
           practice: data.practice,
         };
       });
-
       // setting the articles data
       setArticlesData(articlesData);      
     })
     .catch((error) => console.log(error));
+
   };
 
   useEffect(() => {
-    // fetching articles data
-    fetchArticles();
+    // fetching articles data    
+    fetchArticles(); 
 
     setTimeout(()=> {
-      isLoading(false);
+      isLoading(false);           
     }, 5000);
 
   }, []);
+
   
   // column details for the table
   const columns = [
@@ -117,7 +119,7 @@ const Table = () => {
       title: "Practice",
       field: "practice",
       align: "left",
-      sorting: true,
+      sorting: false,
       lookup: { TDD: "TDD", BDD: "BDD", ATDD: "ATDD" },
       filterPlaceholder: "Select practice types",
     },
@@ -134,20 +136,23 @@ const Table = () => {
 
       {
       /* display the Table component if the data is not loading */
-      !loading && <MaterialTable
+      !loading && 
+      <MaterialTable
         columns={columns}
         data={articles}
         options={{
-          sorting: true,
-          searchFieldVariant: "outlined",          
-          paging: true,
-          pageSizeOptions: [3, 5, 10, 20, 25, 50, 100],
-          pageSize: 4,
-          paginationType: "stepped",
-          columnsButton: true
+          sorting: true,                    // allows sorting of the table
+          searchFieldVariant: "outlined",   // outlines the search bar
+          paging: true,                     // allows paging
+          filtering: true,                  // allows the filtering 
+          pageSizeOptions: [2, 3, 4, 5],    // number of items allowed per page
+          pageSize: 4,                      // default page size of 4
+          paginationType: "stepped",        // setting the paginating style to stepped
+          columnsButton: true               // allows the columns to selected as buttons
         }}
         title="ARTICLES"        
-      />}
+      /> 
+     }
     </div>
   );
 };
