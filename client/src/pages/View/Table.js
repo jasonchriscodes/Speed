@@ -7,9 +7,10 @@ import Axios from 'axios';
 const URL_GET = 'http://localhost:8888/api/articles/all-articles';
 
 const Table = () => {
-  const [articles, setArticlesData] = useState(null);
+  const [articles, setArticlesData] = useState(null);  
+  const [loading, isLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchArticles = () => {
     Axios.get(URL_GET)
     .then( (response) => {
       console.log(response.data);
@@ -28,75 +29,19 @@ const Table = () => {
         };
       });
 
-      setArticlesData(articlesData);
-
+      setArticlesData(articlesData);      
     })
     .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchArticles();
+
+    setTimeout(()=> {
+      isLoading(false);
+    }, 10000);
 
   }, []);
-
-  const [tableData] = useState([
-    {
-      id: "1",
-      title:
-        "An experimental evaluation of test driven development vs. test-last development with industry professionals",
-      authors: "Munir, H., Wnuk, K., Petersen, K., Moayyed, M.",
-      source: "EASE",
-      pubyear: "2014",
-      doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "codeQuality",
-      evidence: "stronglyAgainst",
-      practice: "TDD",
-    },
-    {
-      _id: "2",
-      title:
-        "An experimental evaluation of test driven development vs. test-last development with industry professionals",
-      authors: "Munir, H., Wnuk, K., Petersen, K., Moayyed, M.",
-      source: "EASE",
-      pubyear: "2014",
-      doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "productQuality",
-      evidence: "mostlyAgainst",
-      practice: "BDD",
-    },
-    {
-      _id: "2",
-      title:
-        "An experimental evaluation of test driven development vs. test-last development with industry professionals",
-      authors: "Munir, H., Wnuk, K., Petersen, K., Moayyed, M.",
-      source: "EASE",
-      pubyear: "2014",
-      doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: "productQuality",
-      evidence: "mixed",
-      practice: "BDD",
-    },
-    {
-      _id: "3",
-      title:
-        "Realizing quality improvement through test driven development: results and experiences of four industrial teams",
-      authors: "Nagappan, N., Maximilien, E. M., Bhat, T., Williams, L.",
-      source: " Empirical Software Engineering, 13(3), 289–302",
-      pubyear: "2008",
-      doi: "https://doi.org/10.1007/s10664-008-9062-z",
-      claim: "productQuality",
-      evidence: "stronglyAgree",
-      practice: "ATDD",
-    },
-    {
-      _id: "4",
-      title:
-        "Does Test-Driven Development Really Improve Software Design Quality?",
-      authors: "Janzen, D. S.",
-      source: "Software, IEEE, 25(2) 77-84",
-      pubyear: "2008",
-      doi: null,
-      claim: "teamConfidence",
-      evidence: "stronglyAgainst",
-      practice: "TDD",
-    },
-  ]);
   
   const columns = [
     {
@@ -171,11 +116,13 @@ const Table = () => {
   return (
     <div className="App">
       {console.log('Articles\n', articles)}
-      {console.log('ORG DATA\n', tableData)}
       <h1>SPEED Table Data</h1>
-      <MaterialTable
+
+      {loading && <h1>Loading Data</h1>}
+
+      {!loading && <MaterialTable
         columns={columns}
-        data={tableData}
+        data={articles}
         options={{
           sorting: true,
           searchFieldVariant: "outlined",
@@ -199,7 +146,8 @@ const Table = () => {
             position:"row",
           },
         ]}
-      />
+      />}
+
     </div>
   );
 };
