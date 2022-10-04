@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import { useState, useEffect } from "react";
 import PageviewIcon from '@material-ui/icons/Pageview';
 import Axios from 'axios';
+import RingLoader from 'react-spinners/RingLoader';
 
 const URL_GET = 'http://localhost:8888/api/articles/all-articles';
 
@@ -39,7 +40,7 @@ const Table = () => {
 
     setTimeout(()=> {
       isLoading(false);
-    }, 10000);
+    }, 5000);
 
   }, []);
   
@@ -118,7 +119,10 @@ const Table = () => {
       {console.log('Articles\n', articles)}
       <h1>SPEED Table Data</h1>
 
-      {loading && <h1>Loading Data</h1>}
+      {loading && <RingLoader
+        color="rgba(214, 54, 54, 1)"
+        size={100}/>
+      }        
 
       {!loading && <MaterialTable
         columns={columns}
