@@ -1,0 +1,21 @@
+name: App Deployment
+
+on:
+  push:
+    branches:
+      - deployment
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: test
+      url: https://speed-database-test.herokuapp.com
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY_TEST}}
+          heroku_app_name: "speed-database-test"
+          heroku_email: "speeed.db@gmail.com"
+          procfile: "web: npm start"
