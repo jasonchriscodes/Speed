@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import View from './pages/View/View';
+import Submit from './pages/Submit';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' exact element={<Home/>} />
         <Route path='/about' exact element={<About/>} />
         <Route path='/view' exact element={<View/>} />
+        <Route path='/submit' exact element={<Submit/>} />
       </Routes>
     </BrowserRouter>
   );

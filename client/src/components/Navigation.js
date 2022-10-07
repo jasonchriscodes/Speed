@@ -4,6 +4,7 @@ import {
   NavLink,
   Bars,
   NavMenu,
+  NavBtnLink
 } from './NavbarElements';
 
 const Navigation = () => {
@@ -24,6 +25,7 @@ const Navigation = () => {
           <NavLink to='/about' activeStyle>
             About
           </NavLink>
+          <NavBtnLink to='/submit'>Submit</NavBtnLink>
         </NavMenu>
       </Nav>
     </>
