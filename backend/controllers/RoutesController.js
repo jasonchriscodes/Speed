@@ -13,8 +13,12 @@ const Article = require('../models/Article.js');
 // GET all articles
 // PATH: api/articles/all-articles
 const fetchAllArticles = async (request, response) => {
-  const allArticles = await Article.find({});
-  response.status(200).json(allArticles);
+  try {
+    const allArticles = await Article.find({});
+    return response.status(200).json(allArticles);
+  } catch (error) {
+    return response.status(404).json({ message: error });
+  }
 };
 
 // POST new article
