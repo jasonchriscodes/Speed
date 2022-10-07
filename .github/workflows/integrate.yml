@@ -18,5 +18,5 @@ jobs:
         run: npm run server:setup
       - name: Client Setup
         run: npm run client:setup
-      - name: Unit Test Client
-        run: npm run client:test
+      - name: Unit Test Server
+        run: npm run server:test
