@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server --prefix backend\" \"npm run build --prefix client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client:test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
