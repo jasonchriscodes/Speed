@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+.default {
+ font-family: 'Sora', sans-serif;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+.logo {
+ font-size: 2rem;
+} 
+
+.heading, .submit{
+ font-size: 1.2rem;
+}

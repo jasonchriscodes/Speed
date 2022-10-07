@@ -6,26 +6,27 @@ import {
   NavMenu,
   NavBtnLink
 } from './NavbarElements';
+import styles from "./components-style/Navbar.module.css";
 
 const Navigation = () => {
   return (
     <>
       <Nav>
-        <NavLink to='/'>
+        <NavLink className={styles.logo} to='/'>
           SPEED
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink end to='/' activeStyle>
+          <NavLink className={styles.heading} end to='/' activeStyle>
             Home
           </NavLink>
-          <NavLink to='/view' activeStyle>
+          <NavLink className={styles.heading} to='/view' activeStyle>
             View
           </NavLink>
-          <NavLink to='/about' activeStyle>
+          <NavLink className={styles.heading} to='/about' activeStyle>
             About
           </NavLink>
-          <NavBtnLink to='/submit'>Submit</NavBtnLink>
+          <NavBtnLink className={styles.submit} to='/submit'>Submit</NavBtnLink>
         </NavMenu>
       </Nav>
     </>
