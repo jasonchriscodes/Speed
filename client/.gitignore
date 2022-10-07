@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/package-lock.json
 /client/node_modules
 /.pnp
 .pnp.js
