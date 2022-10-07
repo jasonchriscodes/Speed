@@ -1,18 +1,10 @@
 import React from 'react';
+import Table from "./../../components/Table";
 
-const Submit = () => {
+const View = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh'
-      }}
-    >
-      <h1>Submit</h1>
-    </div>
+    <Table/>
   );
 };
 
-export default Submit;
+export default View;
