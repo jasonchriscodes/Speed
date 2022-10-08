@@ -1,11 +1,11 @@
 import React from 'react';
-import "./style-components/navigation.css";
-import styles from "./style-components/styles";
+import './style-components/navigation.css';
+import styles from './style-components/styles';
 
 const Navigation = () => (
   <div className="bg-primary w-full overflow-hidden">
-    <div className={`${styles.paddingX}`}>
-
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}></div>
     </div>
   </div>
 );
