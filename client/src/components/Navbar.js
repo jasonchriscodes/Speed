@@ -1,10 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
-import { close, logo, menu } from './../assets'
-import { navLinks } from './../constans'
+import React from 'react';
+import { useState } from 'react';
+import { close, logo, menu } from './../assets';
+import { navLinks } from './../constans';
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <img src={logo} alt="speed" className="w-[124px] h-[32px]" />
@@ -34,10 +34,23 @@ const Navbar = () => {
           className={`${
             toggle ? 'flex' : 'hidden'
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-        ></div>
+        >
+          <ul className="list-none flex-col justify-end items-center flex-1">
+            {navLinks.map((nav, index) => (
+              <li
+                key={nav.id}
+                className={`font-poppins font-normal cursor-pointer text-[16px] ${
+                  index === navLinks.length - 1 ? 'mr-0' : 'mb-4'
+                } text-white mr-10`}
+              >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
