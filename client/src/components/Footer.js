@@ -7,6 +7,9 @@ const Footer = () => (
       <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
         2022 SPEED. All Rights Reserved.
       </p>
+      <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
+        Jason Christian - Ieuan Davies - Ajit Singh
+      </p>
     </div>
   </section>
 );
