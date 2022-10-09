@@ -1,7 +1,7 @@
 import React from 'react';
 import './style-components/navigation.css';
 import styles from './style-components/styles';
-import {Navbar, Hero, Footer} from "./index";
+import {Navbar, Home, Footer} from "./index";
 
 const Navigation = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -10,7 +10,7 @@ const Navigation = () => (
     </div>
 
     <div className={`bg-primary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}><Hero/></div>
+      <div className={`${styles.boxWidth}`}><Home/></div>
     </div>
 
     <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>

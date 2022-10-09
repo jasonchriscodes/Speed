@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './style-components/styles';
-import GetStarted from './GetStarted';
-import { robot } from './../../assets';
+import styles from '../Navigation/style-components/styles';
+import GetStarted from '../Navigation/GetStarted';
+import { robot } from '../../assets';
 
-const Hero = () => (
+const Home = () => (
   <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
     <div
       className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
@@ -41,4 +41,4 @@ const Hero = () => (
     </div>
   </section>
 );
-export default Hero;
+export default Home;
