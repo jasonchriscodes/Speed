@@ -7,7 +7,8 @@ const Submit = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh'
+        height: '90vh',
+        color: 'white'
       }}
     >
       <h1>Submit</h1>
