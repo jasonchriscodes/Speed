@@ -1,3 +1,19 @@
+/*
+five prefixes for common breakpoints by default:
+sm = min-width of 640px.
+md = min-width of 768px.
+lg = min-width of 1024px.
+xl = min-width of 1280px.
+2xl = min-width of 1536px.
+
+w = width -> w-full	= width: 100%;
+max-w = max width -> max-w-[1280px] = max-width: 1280px
+xs:text = font size -> xs:text-[48px] = font-size: 48px
+leading = line height -> leading-[30.8px] = line-height: 30.8px
+items-center -> align-items: center;
+flex-col-reverse -> flex-direction: column-reverse;
+flex-1 ->	flex: 1 1 0%;
+*/
 const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
 
