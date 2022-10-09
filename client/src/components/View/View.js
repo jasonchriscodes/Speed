@@ -1,18 +1,9 @@
 import React from 'react';
+import Table from "./Table";
 
 const View = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-        color: 'white'
-      }}
-    >
-      <h1>View</h1>
-    </div>
+    <Table/>
   );
 };
 
