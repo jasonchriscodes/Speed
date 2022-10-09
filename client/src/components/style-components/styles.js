@@ -13,6 +13,7 @@ leading = line height -> leading-[30.8px] = line-height: 30.8px
 items-center -> align-items: center;
 flex-col-reverse -> flex-direction: column-reverse;
 flex-1 ->	flex: 1 1 0%;
+object-contain -> resize img to the container
 */
 const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
