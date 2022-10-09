@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './style-components/styles';
 import GetStarted from "./GetStarted";
+import { robot } from '../assets';
 
 const Hero = () => (
   <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
@@ -21,7 +22,11 @@ const Hero = () => (
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Our team of experts uses a methodology to identify the data storage most likely to fit your needs. 
 We record articles digitally and saved for future access.</p>
+
     </div>
+<div>
+  <img src={robot} alt="robot" className='w-[100%] h-[100%] relative z-[5]'/>
+</div>
   </section>
 );
 export default Hero;
