@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style-components/styles';
 import GetStarted from './GetStarted';
-import { robot } from '../assets';
+import { robot } from './../../assets';
 
 const Hero = () => (
   <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
