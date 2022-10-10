@@ -1,18 +1,13 @@
 import React from 'react';
+import styles, { layout } from './../Navigation/style-components/styles';
 
 const About = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-        color: 'white'
-      }}
-    >
-      <h1>About</h1>
-    </div>
+    <section id="features" className={layout.section}>
+      <div className={layout.sectionInfo}>
+        <h2 className={styles.heading2}>About Us</h2>
+      </div>
+    </section>
   );
 };
 
