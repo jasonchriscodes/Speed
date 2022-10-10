@@ -5,7 +5,7 @@ import { Navbar, Home, Footer } from './index';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import About from "./../About/About";
 import View from "./../View/View";
-import Submit from "./../Submit/Submit";
+import Submit from "../Submit/Submit";
 
 const Navigation = () => (
   <div className="bg-primary w-full overflow-hidden">
