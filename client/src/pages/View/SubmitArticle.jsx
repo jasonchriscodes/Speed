@@ -1,46 +1,45 @@
 import React from "react";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 
-// const initialValues ={
-//     title: '',
-//     author: '',
-//     jnl_name: '',
-//     vol: '',
-//     number: 0,
-//     doi: '',
-//     pub: '',
-// };
+import { Card, CardContent, Grid, TextField, Button} from '@material-ui/core';
 
 export default function SubmitArticle() {
     return (
-        <Box
-            component="form"
-            sx={{
-                '& > :not(style': { m: 1, width: '25ch'},
-            }}
-            noValidate
-            autoComplete="off"
-        >
-            <div>
-                <TextField id="title" label="title" variant="standard" />
-                <TextField id="author" label="author" variant="standard" />
-            </div>
-
-            <div>
-                <TextField id="jnl_name" label="journal name" variant="standard" />
-                <TextField id="vol" label="volume" variant="standard" />
-            </div>
-            
-            <div>   
-                <TextField id="number" label="number" variant="standard" />
-                <TextField id="pages" label="pages" variant="standard" />
-            </div>
-            
-            <div>
-                <TextField id="doi" label="DOI" variant="standard" />
-                <TextField id="pub" label="publication date" variant="standard" />
-            </div>
-        </Box>
+        <div className="App">
+            <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}}>
+                <CardContent>
+                    <form>
+                    <Grid container spacing={1} >
+                        <Grid xs={12} item>
+                            <TextField label="Title" placeholder="Enter title" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="Author" placeholder="Enter author" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="Journal Name" placeholder="Enter journal name" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="Volume" placeholder="Enter volume" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="Number" placeholder="Enter number" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="Pages" placeholder="Enter pages" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField label="DOI" placeholder="Enter DOI" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <TextField InputLabelProps={{ shrink: true }} type = "date" label="Publication date" placeholder="Enter publication date" variant="outlined" fullWidth required/>
+                        </Grid>
+                        <Grid xs={12} item>
+                            <Button variant="contained" color="primary" fullWidth>Submit</Button>
+                        </Grid>
+                    </Grid>
+                    </form>
+                </CardContent>
+            </Card>
+        </div>
     );
 }
