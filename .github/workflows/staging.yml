@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: staging
+      name: production
       url: https://speed-database-test.herokuapp.com
     steps:
       - uses: actions/checkout@v2
