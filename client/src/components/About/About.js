@@ -1,5 +1,14 @@
 import React from 'react';
+import { features } from '../Navigation/constans';
 import styles, { layout } from './../Navigation/style-components/styles';
+
+const FeatureCard = ({icon, title, content, index}) =>(
+  <div>
+    <div>
+      <img src={icon} alt="icon"/>
+    </div>
+  </div>
+);
 
 const About = () => {
   return (
@@ -12,6 +21,11 @@ const About = () => {
           data can be accessed quickly. SPEED is a highly scalable platform
           equally suitable for storing articles data.
         </p>
+      </div>
+      <div className={`${layout.sectionImg} flex-col`}>
+{features.map((feature, index) => (
+  <FeatureCard key={feature.id} {...feature} index={index}/>
+))}
       </div>
     </section>
   );
