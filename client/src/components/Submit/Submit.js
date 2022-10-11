@@ -5,6 +5,7 @@ import Axios from 'axios';
 const URL_POST = 'http://localhost:8888/api/articles/post-new-submit-article';
 
 const Submit = () => {
+    // states for the text fields
     const [title, setTitle] = useState('');
     const [authors, setAuthors] = useState('');
     const [journalName, setJournalName] = useState('');
@@ -14,6 +15,7 @@ const Submit = () => {
     const [doi, setDOI] = useState('');
     const [pubyear, setPubyear] = useState('');
 
+    // states to manage the validations of the text fields
     const [titleError, setTitleError] = useState(false);
     const [authorsError, setAuthorsError] = useState(false);
     const [journalNameError, setJournalNameError] = useState(false);
@@ -23,13 +25,18 @@ const Submit = () => {
     const [doiError, setDOIError] = useState(false);
     const [pubyearError, setPubyearError] = useState(false);
 
+    /**
+     *  handles the title change input
+     **/
     const onTitleChangeHandler = (e) => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setTitleError(true);
         } else {
+            // set the error value to false and update the value of title
             setTitleError(false);
             setTitle(input);
         }
@@ -39,9 +46,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setAuthorsError(true);
         } else {
+            // set the error value to false and update the value of authors
             setAuthorsError(false);
             setAuthors(input);
         }        
@@ -51,9 +60,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setJournalNameError(true);
         } else {
+            // set the error value to false and update the value of journal name
             setJournalNameError(false);
             setJournalName(input);
         } 
@@ -63,9 +74,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setVolumeError(true);
         } else {
+            // set the error value to false and set the value of volume
             setVolumeError(false);
             setVolume(input);
         } 
@@ -75,9 +88,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setNumberError(true);
         } else {
+            // set the error value to false and update the value of number
             setNumberError(false);
             setNumber(input);
         } 
@@ -87,9 +102,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setPagesError(true);
         } else {
+            // set the error value to false and update the value of pages
             setPagesError(false);
             setPages(input);
         } 
@@ -99,9 +116,11 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setDOIError(true);
         } else {
+            // set the error value to false and update the value of DOI
             setDOIError(false);
             setDOI(input);
         } 
@@ -111,16 +130,22 @@ const Submit = () => {
         e.preventDefault();
         const input = e.target.value;
 
+        // sets error to true if the text field is empty
         if(input === ''){
             setPubyearError(true);
         } else {
+            // set the error value to false and update the value of pubyear
             setPubyearError(false);
             setPubyear(input);
         } 
     };
 
-
+    /**
+     * This function makes a post request to send
+     * the article details submitted by the user.
+     */
     const postNewSubmitArticle = () => {
+        // URL_POST is the API URL to manage post request
         Axios.post(URL_POST, {
             title: title,
             authors: authors,
@@ -131,12 +156,10 @@ const Submit = () => {
             doi: doi,
             pubyear: pubyear,
         }).then((response) => {
-            console.log(response);
-        })
-          .catch((error) => console.log(error));          
+            console.log(response.data);
+        }).catch((error) => console.log(error));          
 
         alert('New Article Submitted');
-        
     };
 
     return (
@@ -146,7 +169,7 @@ const Submit = () => {
                     <form>
                     <Grid container spacing={1} >
                         <Grid xs={12} item>
-                            <TextField error={titleError} onChange={onTitleChangeHandler}  label="Title" placeholder={title} variant="outlined" fullWidth required/>
+                            <TextField error={titleError} onChange={onTitleChangeHandler}  label="Title" placeholder="Enter Title" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
                             <TextField error={authorsError} onChange={onAuthorChangeHandler} label="Author" placeholder="Enter author" variant="outlined" fullWidth required/>
