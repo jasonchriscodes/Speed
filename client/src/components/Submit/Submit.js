@@ -157,10 +157,16 @@ const Submit = () => {
             pubyear: pubyear,
         }).then((response) => {
             console.log(response.data);
-        }).catch((error) => console.log(error));          
-
-        alert('New Article Submitted');
+            alert('New Article Submitted');
+            
+        }).catch((error) => {
+            console.log(error);
+            alert('Please make sure all text fields have been filled in!!!!!!!!!');
+        });          
+        
     };
+
+
 
     return (
         <div className="App">
@@ -193,7 +199,7 @@ const Submit = () => {
                             <TextField error={pubyearError} onChange={onPubYearChangeHandler} InputLabelProps={{ shrink: true }} type = "date" label="Publication date" placeholder="Enter publication date" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <Button onClick={postNewSubmitArticle} variant="contained" color="primary" fullWidth>Submit</Button>
+                            <Button onClick={postNewSubmitArticle} id={'button-submit'} variant="contained" color="primary" fullWidth>Submit</Button>
                         </Grid>
                     </Grid>
                     </form>
