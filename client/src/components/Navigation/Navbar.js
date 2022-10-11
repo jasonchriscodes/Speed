@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { useState } from 'react';
 import { close, logo, menu } from './../../assets';
 import { navLinks } from './constans/index';
-import { NavLink as Link} from "react-router-dom";
+import { NavLink as Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);

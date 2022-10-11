@@ -37,14 +37,17 @@ connectDB();
 
 __dirname = path.resolve();
 
+console.log('dirname');
 if (process.env.NODE_ENV === 'production') {
   // serve front-end client from build folder
+  console.log('NODE_ENV: production');
   app.use(express.static(__dirname + '/../client/build'));
   app.get('*', (req, res) => {
     res.sendFile(__dirname + '/../client/build/index.html');
   });
 } else {
+  console.log('NODE_ENV: else');
   app.get('/', (req, res) => res.send(`API running on port ${port}`));
 }
-
+console.log('done');
 app.listen(port, () => console.log(`Server running on port ${port}`));
