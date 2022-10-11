@@ -14,25 +14,103 @@ const Submit = () => {
     const [doi, setDOI] = useState('');
     const [pubyear, setPubyear] = useState('');
 
-    const [titleError, setTitleError] = useState('');
-    const [authorsError, setAuthorsError] = useState('');
-    const [journalNameError, setJournalNameError] = useState('');
-    const [volumeError, setVolumeError] = useState('');
-    const [numberError, setNumberError] = useState('');
-    const [pagesError, setPagesError] = useState('');
-    const [doiError, setDOIError] = useState('');
-    const [pubyearError, setPubyearError] = useState('');
+    const [titleError, setTitleError] = useState(false);
+    const [authorsError, setAuthorsError] = useState(false);
+    const [journalNameError, setJournalNameError] = useState(false);
+    const [volumeError, setVolumeError] = useState(false);
+    const [numberError, setNumberError] = useState(false);
+    const [pagesError, setPagesError] = useState(false);
+    const [doiError, setDOIError] = useState(false);
+    const [pubyearError, setPubyearError] = useState(false);
 
+    const onTitleChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
 
+        if(input === ''){
+            setTitleError(true);
+        } else {
+            setTitle(input);
+        }
+    };
 
-    const onTitleChangeHandler = (e) => setTitle(e.target.value);
-    const onAuthorChangeHandler = (e) => setAuthors(e.target.value);
-    const onJournalNameChangeHandler = (e) => setJournalName(e.target.value);
-    const onVolumeChangeHandler = (e) => setVolume(e.target.value);
-    const onNumberChangeHandler = (e) => setNumber(e.target.value);
-    const onPagesChangeHandler = (e) => setPages(e.target.value);
-    const onDOIChangeHandler = (e) => setDOI(e.target.value);
-    const onPubYearChangeHandler = (e) => setPubyear(e.target.value);
+    const onAuthorChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setAuthorsError(true);
+        } else {
+            setAuthors(input);
+        }        
+    };
+
+    const onJournalNameChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setJournalNameError(true);
+        } else {
+            setJournalName(input);
+        } 
+    };
+
+    const onVolumeChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setVolumeError(true);
+        } else {
+            setVolume(input);
+        } 
+    };
+
+    const onNumberChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setNumberError(true);
+        } else {
+            setNumber(input);
+        } 
+    };
+
+    const onPagesChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setPagesError(true);
+        } else {
+            setPages(input);
+        } 
+    };
+
+    const onDOIChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setDOIError(true);
+        } else {
+            setDOI(input);
+        } 
+    };
+
+    const onPubYearChangeHandler = (e) => {
+        e.preventDefault();
+        const input = e.target.value;
+
+        if(input === ''){
+            setPubyearError(true);
+        } else {
+            setPubyear(input);
+        } 
+    };
+
 
     const postNewSubmitArticle = () => {
         Axios.post(URL_POST, {
@@ -60,28 +138,28 @@ const Submit = () => {
                     <form>
                     <Grid container spacing={1} >
                         <Grid xs={12} item>
-                            <TextField onChange={onTitleChangeHandler}  label="Title" placeholder={title} variant="outlined" fullWidth required/>
+                            <TextField error={titleError} onChange={onTitleChangeHandler}  label="Title" placeholder={title} variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onAuthorChangeHandler} label="Author" placeholder="Enter author" variant="outlined" fullWidth required/>
+                            <TextField error={authorsError} onChange={onAuthorChangeHandler} label="Author" placeholder="Enter author" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onJournalNameChangeHandler} label="Journal Name" placeholder="Enter journal name" variant="outlined" fullWidth required/>
+                            <TextField error={journalNameError} onChange={onJournalNameChangeHandler} label="Journal Name" placeholder="Enter journal name" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onVolumeChangeHandler} label="Volume" placeholder="Enter volume" variant="outlined" fullWidth required/>
+                            <TextField error={volumeError} onChange={onVolumeChangeHandler} label="Volume" placeholder="Enter volume" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onNumberChangeHandler} label="Number" placeholder="Enter number" variant="outlined" fullWidth required/>
+                            <TextField error={numberError} onChange={onNumberChangeHandler} label="Number" placeholder="Enter number" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onPagesChangeHandler} label="Pages" placeholder="Enter pages" variant="outlined" fullWidth required/>
+                            <TextField error={pagesError} onChange={onPagesChangeHandler} label="Pages" placeholder="Enter pages" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onDOIChangeHandler} label="DOI" placeholder="Enter DOI" variant="outlined" fullWidth required/>
+                            <TextField error={doiError} onChange={onDOIChangeHandler} label="DOI" placeholder="Enter DOI" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
-                            <TextField onChange={onPubYearChangeHandler} InputLabelProps={{ shrink: true }} type = "date" label="Publication date" placeholder="Enter publication date" variant="outlined" fullWidth required/>
+                            <TextField error={pubyearError} onChange={onPubYearChangeHandler} InputLabelProps={{ shrink: true }} type = "date" label="Publication date" placeholder="Enter publication date" variant="outlined" fullWidth required/>
                         </Grid>
                         <Grid xs={12} item>
                             <Button onClick={postNewSubmitArticle} variant="contained" color="primary" fullWidth>Submit</Button>
