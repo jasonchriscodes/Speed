@@ -30,6 +30,7 @@ const Submit = () => {
         if(input === ''){
             setTitleError(true);
         } else {
+            setTitleError(false);
             setTitle(input);
         }
     };
@@ -41,6 +42,7 @@ const Submit = () => {
         if(input === ''){
             setAuthorsError(true);
         } else {
+            setAuthorsError(false);
             setAuthors(input);
         }        
     };
@@ -52,6 +54,7 @@ const Submit = () => {
         if(input === ''){
             setJournalNameError(true);
         } else {
+            setJournalNameError(false);
             setJournalName(input);
         } 
     };
@@ -63,6 +66,7 @@ const Submit = () => {
         if(input === ''){
             setVolumeError(true);
         } else {
+            setVolumeError(false);
             setVolume(input);
         } 
     };
@@ -74,6 +78,7 @@ const Submit = () => {
         if(input === ''){
             setNumberError(true);
         } else {
+            setNumberError(false);
             setNumber(input);
         } 
     };
@@ -85,6 +90,7 @@ const Submit = () => {
         if(input === ''){
             setPagesError(true);
         } else {
+            setPagesError(false);
             setPages(input);
         } 
     };
@@ -96,6 +102,7 @@ const Submit = () => {
         if(input === ''){
             setDOIError(true);
         } else {
+            setDOIError(false);
             setDOI(input);
         } 
     };
@@ -107,6 +114,7 @@ const Submit = () => {
         if(input === ''){
             setPubyearError(true);
         } else {
+            setPubyearError(false);
             setPubyear(input);
         } 
     };
