@@ -49,7 +49,7 @@ const Table = () => {
 
     setTimeout(()=> {
       isLoading(false);           
-    }, 5000);
+    }, 1000);
 
   }, []);
 
