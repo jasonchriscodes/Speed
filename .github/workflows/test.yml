@@ -1,18 +1,15 @@
-name: Staging Deployment
+name: App Deployment
 
 on:
   push:
     branches:
-      - development
-  pull_request:
-    branches:
-      - development
+      - deployment
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: staging
+      name: test
       url: https://speed-database-test.herokuapp.com
     steps:
       - uses: actions/checkout@v2

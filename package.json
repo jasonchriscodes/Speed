@@ -7,14 +7,18 @@
     "client:setup": "cd client && npm install",
     "client:build": "cd client && npm run build",
     "server:setup": "npm install",
+    "server:start": "node backend/server.js",
+    "server:dev": "nodemon backend/server.js",
     "dev": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server --prefix backend\" \"npm run build --prefix client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:test": "npm install --prefix server && npm run test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20"
   }
 }

@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "plugin:react/jsx-runtime", 
@@ -22,6 +23,7 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "semi": ["error", "always"]
+        "semi": ["error", "always"],
+        "react/prop-types": [0 , { "ignore" : true}]
     }
 }
