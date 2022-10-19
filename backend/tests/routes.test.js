@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 describe('GET Endpoints', () => {
+  console.log('process.env.NODE_ENV : ', process.env.NODE_ENV);
   console.log('process.env.BASE_URL : ', process.env.BASE_URL);
   it('GET Articles Returns Status Code 200', async () => {
     // get the response from the path /all-articles
