@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, Grid, TextField, Button} from '@material-ui/core';
 import Axios from 'axios';
 
-const URL_POST = 'https://speed-database.herokuapp.com/api/articles/post-new-submit-article';
+const URL_POST = 'https://speed-database-test.herokuapp.com/home/api/articles/post-new-submit-article';
 
 const Submit = () => {
     // states for the text fields
