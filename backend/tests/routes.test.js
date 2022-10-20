@@ -3,8 +3,8 @@
  * This files tests the api of the application.
  */
 const request = require('supertest');
-if (process.env.NODE_ENV !== process.env.STAGING) {
-  process.env.BASE_URL = process.env.GET_PATH;
+if (process.env.NODE_ENV !== 'production') {
+  process.env.BASE_URL = 'http://localhost:8888/api/articles';
 }
 
 describe('GET Endpoints', () => {
