@@ -10,7 +10,7 @@ import RingLoader from 'react-spinners/RingLoader';
 
 
 // URL to the Backend API
-const URL_GET = 'http://localhost:8888/api/articles/all-articles';
+const URL_GET = 'https://speed-database-test.herokuapp.com/api/articles/all-articles';
 
 const Table = () => {  
   const [articles, setArticlesData] = useState(null);  // state to track the articles and set articles data
